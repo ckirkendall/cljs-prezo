@@ -73,8 +73,9 @@
 (em/deftemplate slide17 "slides/atom1.html" [])
 (em/deftemplate slide18 "slides/atom2.html" [])
 (em/deftemplate slide19 "slides/atom-demo.html" [])
-(em/deftemplate slide20 "slides/about-prezo.html" [])
-(em/deftemplate slide21 "slides/question.html" [])
+(em/deftemplate slide20 "slides/cool-things-not-covered.html" [])
+(em/deftemplate slide21 "slides/about-prezo.html" [])
+(em/deftemplate slide22 "slides/question.html" [])
 
 (def action-index (atom 0))
 
@@ -91,6 +92,12 @@
                  (anim/scary-parens))
               ;#(transition-slide slide4)
               #(transition-slide slide5)
+              #(do
+                 (reset-slide slide5)
+                 (anim/call-out (by-id "syntax-el") 
+                                con/syntax-text 
+                                {:font-size "1em" :loc [-5 -5] :size [360 190]
+                                 :font-offset [5 -400] }))
               #(transition-slide slide6)
               #(do
                  (reset-slide slide6)
@@ -195,7 +202,8 @@
                                          (em/listen :focus disable-nav-keys)
                                          (em/listen :blur enable-nav-keys))))
               #(transition-slide slide20)
-              #(transition-slide slide21)])
+              #(transition-slide slide21)
+              #(transition-slide slide22)])
 
 ; p,b,left arrow, up arrow, backspace
 (def back-key-codes #{80 66 37 38,8}) 

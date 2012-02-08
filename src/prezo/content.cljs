@@ -13,17 +13,26 @@
                                  "}\n\n"
                                  "tmp({ z : 3, y : 4 });\n\n\n\n\n\n\n\n\n\n"))  
 
+
+(def syntax-text (str "<div id='use-doc' class='doc'><h3>Imutable Data Structures</h3>"
+                      "All primary data structures in ClojureScript are imutable.<br/>"  
+                      "Operations on them return a 'copy', leaving the original intact.<br/>"
+                      "ClojureScript encourages controled access to mutable state<br/>"
+                      "through constructs like the Atom. Later on in the presentation<br/>"
+                      "we will take a look at how the Atom provides backbone like <br/>"
+                      "features built right into the language.</div>"))
+
 (def ns-use-text (str "<div id='use-doc' class='doc'><h3>:use</h3>"
                       "Provides the ability to import symbols defined in another namespace.<br>"  
                       "<br>The following filters to be applied to the symbols:<br>"
                       "&nbsp;&nbsp;&nbsp;&nbsp;:exclude [sym1 sym2 ..]<br/>"
                       "&nbsp;&nbsp;&nbsp;&nbsp;:only [sym1 sym2 ...]<br/>"
-                      "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}<div>"))
+                      "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}</div>"))
 
 (def ns-require-text (str "<div id='use-doc' class='doc'><h3>:require</h3>"
                           "Allows us to import another namespace and provide an alias.<br>"  
                           "<br>Functions and values are accessed by prefixing the alias:<br>"
-                          "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) <div>"))
+                          "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) </div>"))
 
 (def ns-proto-text (str "<div id='use-doc' class='doc'><h3>Protocols</h3>"
                           "Provide an abstraction for safely extending types without the chance of collision or the need for wrappers/adapters.<br/>"  

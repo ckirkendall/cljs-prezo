@@ -14012,8 +14012,9 @@ prezo.atom.persist_user_form = function() {
 };
 prezo.content = {};
 prezo.content.decon_with_defualt_js = cljs.core.str.call(null, "function tmp (point) {\n", "     var x=point.x;\n", "     var y=point.y;\n", "     if(x === undefined) {\n", "          x=3;\n", "     }\n", "     log(x y);\n", "}\n\n", "tmp({ z : 3, y : 4 });\n\n\n\n\n\n\n\n\n\n");
-prezo.content.ns_use_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:use</h3>", "Provides the ability to import symbols defined in another namespace.<br>", "<br>The following filters to be applied to the symbols:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;:exclude [sym1 sym2 ..]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:only [sym1 sym2 ...]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}<div>");
-prezo.content.ns_require_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:require</h3>", "Allows us to import another namespace and provide an alias.<br>", "<br>Functions and values are accessed by prefixing the alias:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) <div>");
+prezo.content.syntax_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Imutable Data Structures</h3>", "All primary data structures in ClojureScript are imutable.<br/>", "Operations on them return a 'copy', leaving the original intact.<br/>", "ClojureScript encourages controled access to mutable state<br/>", "through constructs like the Atom. Later on in the presentation<br/>", "we will take a look at how the Atom provides backbone like <br/>", "features built right into the language.</div>");
+prezo.content.ns_use_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:use</h3>", "Provides the ability to import symbols defined in another namespace.<br>", "<br>The following filters to be applied to the symbols:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;:exclude [sym1 sym2 ..]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:only [sym1 sym2 ...]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}</div>");
+prezo.content.ns_require_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:require</h3>", "Allows us to import another namespace and provide an alias.<br>", "<br>Functions and values are accessed by prefixing the alias:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) </div>");
 prezo.content.ns_proto_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Protocols</h3>", "Provide an abstraction for safely extending types without the chance of collision or the need for wrappers/adapters.<br/>", "We will see an example later...</div>");
 prezo.content.ex1_js_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>What About Collisions?</h3>", "Here we see that we must modify JQuery's namespace.<br/>", "Modern apps have simply moved the collision problem<br/>", "from the global namespace to JQuery's namespace.</div>");
 prezo.content.ex1_cljs_func_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Just a Function</h3>", "Our logging function is no longer a plugin; its now just </br>", "a standard function in its own namespace.</div>");
@@ -14375,8 +14376,19 @@ prezo.core.slide19 = function() {
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
-enfocus.core.load_remote_dom.call(null, "slides/about-prezo.html");
+enfocus.core.load_remote_dom.call(null, "slides/cool-things-not-covered.html");
 prezo.core.slide20 = function() {
+  var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/cool-things-not-covered.html")
+  })) ? function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/cool-things-not-covered.html")
+  }.call(null) : cljs.core.Vector.fromArray(["", function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/cool-things-not-covered.html")
+  }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
+  return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
+};
+enfocus.core.load_remote_dom.call(null, "slides/about-prezo.html");
+prezo.core.slide21 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
     return enfocus.core.get_cached_dom.call(null, "slides/about-prezo.html")
   })) ? function() {
@@ -14387,7 +14399,7 @@ prezo.core.slide20 = function() {
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
 enfocus.core.load_remote_dom.call(null, "slides/question.html");
-prezo.core.slide21 = function() {
+prezo.core.slide22 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
     return enfocus.core.get_cached_dom.call(null, "slides/question.html")
   })) ? function() {
@@ -14412,6 +14424,9 @@ prezo.core.actions = cljs.core.Vector.fromArray([function() {
   return prezo.animation.scary_parens.call(null)
 }, function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide5)
+}, function() {
+  prezo.core.reset_slide.call(null, prezo.core.slide5);
+  return prezo.animation.call_out.call(null, prezo.util.by_id.call(null, "syntax-el"), prezo.content.syntax_text, cljs.core.ObjMap.fromObject(["\ufdd0'font-size", "\ufdd0'loc", "\ufdd0'size", "\ufdd0'font-offset"], {"\ufdd0'font-size":"1em", "\ufdd0'loc":cljs.core.Vector.fromArray([-5, -5]), "\ufdd0'size":cljs.core.Vector.fromArray([360, 190]), "\ufdd0'font-offset":cljs.core.Vector.fromArray([5, -400])}))
 }, function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide6)
 }, function() {
@@ -14503,6 +14518,8 @@ prezo.core.actions = cljs.core.Vector.fromArray([function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide20)
 }, function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide21)
+}, function() {
+  return prezo.core.transition_slide.call(null, prezo.core.slide22)
 }]);
 prezo.core.back_key_codes = cljs.core.set([66, 37, 38, 8, 80]);
 prezo.core.start_key_codes = cljs.core.set([83]);
