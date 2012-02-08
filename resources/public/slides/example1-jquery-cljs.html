@@ -1,0 +1,36 @@
+<html>
+<body>
+<div class="slide">
+<h2>Example 1: JQuery Plugin (ClojureScript)</h2>
+
+<table cellspacing="5">
+			<tr>
+				<td>The Logger Function<td>
+			</tr>
+			<tr>
+				<td>
+<pre id="cljs-plugin-def" style="font-size: .7em;">
+(ns cincijs.jquery.logger)
+
+(defn logger [sel { pre :pre :or { pre "Log"}}]
+  (.each sel #(let [obj (js/jQuery js/this)]
+                (.log console pre obj))))
+</pre>
+			</tr>
+			<tr>
+				<td><br/>Calling Our Logger</td>
+			</tr>
+			<tr>
+				<td>
+<pre id="cljs-plugin-call" style="font-size: .7em;">
+(-> js/JQuery
+    (logger { :pre "logger"})
+    (.append "<span>")
+    (.text "hello"))
+</pre>
+			</tr>
+</table>
+
+</div>
+</body>
+</html>

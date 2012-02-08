@@ -1,0 +1,66 @@
+<html>
+<body>
+	<div class="slide">
+		<h2>Functions - Argument Deconstruction</h2>
+		<table cellspacing="5">
+			<tr>
+				<th>JavaScript</th>
+				<th>ClojureScript</th>
+			</tr>
+			
+			<tr>
+				<td>
+<pre id="js-decon" style="font-size: .9em;">
+function tmp (point){
+     var x=point.x;
+     var y=point.y;
+     log(x + y);
+}
+
+tmp({ "x" : 3, "y" : 9});
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+				</td>
+				<td>
+<pre id="decon" style="font-size: .9em;">
+(defn tmp [[x y]] (log x y))
+
+(tmp [3 3])
+
+
+(defn tmp [:keys [x y]] (log x y))
+
+(tmp {:x 3, :y 3})
+
+
+(defn tmp [{ x :x, y :y}] (log x y))
+
+(tmp {:x 3, :y 3})
+
+
+(defn tmp  [{ x :x, y :y :or {x 3}}]
+  (log x y))
+  
+(tmp {:z 4 :y 4})
+</pre>
+				</td>
+			</tr>
+			<tr>
+			<td colspan=2>Note: More deconstructions are available with defn, fn, let and bindings. 
+			<a href="http://clojure.org/special_forms#Special Forms--(let [bindings* ] exprs*)">more info</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

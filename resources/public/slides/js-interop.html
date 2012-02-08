@@ -1,0 +1,49 @@
+<html>
+<body>
+	<div class="slide">
+		<h2>JavaScript Interop</h2>
+		<table cellspacing="5">
+			<tr>
+				<th>Syntax</th>
+			</tr>
+			<tr>
+				<td>Calling a method</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+(.method obj arg1 arg2 ...)
+
+or
+
+(. obj (method arg1 arg2 ...))
+</pre></td>
+			</tr>
+			<tr>
+				<td>Accessing a Property</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+(. obj -prop1)
+
+or
+
+(.-prop1 obj)
+</pre></td>
+			</tr>
+			<tr>
+				<td>Setting a Property</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+(set! (.-prop obj) newValue)
+</pre>
+				</td>
+
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

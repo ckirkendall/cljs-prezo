@@ -1,0 +1,53 @@
+<html>
+<body>
+	<div class="slide">
+		<h2>Functions - Overloading</h2>
+		<table cellspacing="5">
+			<tr>
+				<th>JavaScript</th>
+				<th>ClojureScript</th>
+			</tr>
+			<tr>
+				<td>
+<pre>
+function tmp (){
+    switch (arguments.length) {
+    case 1:
+        //do-something;
+        break;
+    case 2:
+        //do-something-else;
+        break;
+    default: 
+        throw("invalid arity")
+        break;
+    }
+}
+
+
+</pre>
+				</td>
+				<td>
+<pre>
+(defn tmp
+  ([arg1] 
+    :do-something
+  ([arg1 arg2] 
+    :do-something-else))           
+
+
+
+
+
+
+
+
+
+
+</pre>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

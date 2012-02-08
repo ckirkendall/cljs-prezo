@@ -1,0 +1,49 @@
+<html>
+<body>
+<div class="slide">
+<h2>Example 1: JQuery Plugin (JavaScript)</h2>
+
+<table cellspacing="5">
+			<tr>
+				<td>The Logger Function<td>
+			</tr>
+			<tr>
+				<td>
+<pre id="js-plugin-def" style="font-size: .7em;">
+(function($){
+   $.fn.extend({
+       //plugin name - logger
+        logger: function(options) {
+
+           var defaults = {
+               pre : "Log:"
+           };
+
+           var options = $.extend(defaults, options);
+
+           return this.each(function() {
+                 var obj = $(this);
+                 console.log(pre, obj);
+           });
+       }
+   });
+})(jQuery);
+</pre>
+			</tr>
+			<tr>
+				<td>Calling Our Logger</td>
+			</tr>
+			<tr>
+				<td>
+<pre style="font-size: .7em;">
+JQuery.select(".cool")
+      .logger({ pre : "logger" })
+      .append("span")
+      .text("hello")
+</pre>
+			</tr>
+</table>
+
+</div>
+</body>
+</html>

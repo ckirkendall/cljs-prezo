@@ -1,0 +1,46 @@
+<html>
+<body>
+<div class="slide">
+<h2>Example 2: Protocols (<a href="https://github.com/levand/domina/blob/master/src/cljs/domina.cljs">Domina</a>)</h2>
+
+<table cellspacing="5">
+			<tr>
+				<td>Defining the Protocol<td>
+			</tr>
+			<tr>
+				<td>
+<pre id="cljs-proto-def" style="font-size: .7em;">
+(defprotocol DomContent
+  (nodes [content] "Returns the content as a sequence of nodes.")
+  (single-node [nodeseq] "Returns the content as a single node"))
+</pre>
+			</tr>
+			<tr>
+				<td><br/>Extending Types and Protocols</td>
+			</tr>
+			<tr>
+				<td>
+<pre id="cljs-proto-call" style="font-size: .7em;">
+(extend-protocol DomContent
+  string
+  (nodes [s] (cons (dom/htmlToDocumentFragment s)))
+  (single-node [s] (dom/htmlToDocumentFragment s))
+
+  js/Element
+  (nodes [content] (cons content))
+  (single-node [content] content)
+
+  default
+  (nodes [content] (seq content))
+  (single-node [content] (first content)))
+
+(extend-type js/NodeList
+  ISeqable
+  (-seq [nodelist] (lazy-nodelist nodelist)))
+</pre>
+			</tr>
+</table>
+
+</div>
+</body>
+</html>

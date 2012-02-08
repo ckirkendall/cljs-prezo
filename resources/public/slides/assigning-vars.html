@@ -1,0 +1,65 @@
+<html>
+<body>
+	<div class="slide">
+		<h2>Assigning Vars/Vals</h2>
+		<table cellspacing="5">
+			<tr>
+				<th>JavaScript</th>
+				<th>ClojureScript</th>
+			</tr>
+			<tr>
+			<td colspan="2">Global Scope</td>
+			</tr>
+			<tr>
+				<td><pre id="global-var">globalVar1=3;</pre></td>
+				<td><pre>None</pre></td>
+			</tr>
+			<tr>
+			<td colspan="2">Namespace Scope</td>
+			</tr>
+			<tr>
+				<td><pre>Manual</pre></td>
+				<td><pre>(def name-val 3)</pre></td>
+			</tr>
+			<tr>
+			<td colspan="2">Local Scope</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+function tmp(){
+ var x="test";
+ var y=function () { return 3;};
+ ...
+}
+</pre>
+				</td>
+				<td>
+<pre>
+(defn tmp []
+  (let [x "test"
+        y #(do 3)]
+    ...))
+    
+</pre>
+				</td>
+
+			</tr>
+			<tr>
+			<td colspan="2">Context Scope</td>
+			</tr>
+			<tr>
+				<td><pre>None
+				</pre>
+                </td>
+				<td>
+<pre>
+(binding [*myvar* "test")
+  (tmp x y))
+</pre>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

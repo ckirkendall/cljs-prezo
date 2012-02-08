@@ -1,0 +1,45 @@
+<html>
+<body>
+<div class="slide">
+<h2>JavaScript Namespaces</h2>
+
+<table cellspacing="5">
+			<tr>
+				<td>Object Encapsulation<td>
+			</tr>
+			<tr>
+				<td>
+<pre style="font-size: .8em;">
+if (typeof My == 'undefined')
+  My = {};
+if (typeof My.Namespace == 'undefined')
+  My.Namespace = {};
+  
+</pre>
+			</tr>
+			<tr>
+				<td>Scoped Closure</td>
+			</tr>
+			<tr>
+				<td>
+<pre style="font-size: .8em;">
+(function(){
+
+    var private-var=...;
+    
+    this.foo=function () {..}
+    
+    this.Bar = {}
+
+    this.Bar.prototype.doSomething = function() {
+      ...
+    }
+
+}).call(My.Namespace);
+</pre>
+			</tr>
+</table>
+
+</div>
+</body>
+</html>

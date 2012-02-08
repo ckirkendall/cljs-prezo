@@ -1,0 +1,74 @@
+<html>
+<body>
+	<div class="slide">
+		<h2>Functions</h2>
+		<table cellspacing="5">
+			<tr>
+				<th>JavaScript</th>
+				<th>ClojureScript</th>
+			</tr>
+			<tr>
+			<td colspan="2">Defining Standard Functions:</td>
+			</tr>
+			<tr>
+				<td>
+<pre class="bad">
+function tmp (arg1, agr2){
+	return arg1+arg2; 
+}
+
+</pre>
+				</td>
+				<td>
+<pre>
+(defn tmp [arg1 agr2] (+ arg1 arg2))
+
+
+
+</pre>
+				</td>
+			</tr>
+			<tr>
+			<td colspan="2">Defining In-line Functions:</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+function (arg1, agr2){
+	return arg1+arge2; 
+}
+
+
+</pre>
+				</td>
+				<td>
+<pre id="inline-func">
+(fn [arg1 agr2] (+ arg1 agr2))
+
+or
+
+#(+ %1 %2)
+</pre>
+				</td>
+			</tr>
+			<tr>
+			<td colspan="2">Calling Functions:</td>
+			</tr>
+			<tr>
+				<td>
+<pre>
+tmp(1, 3);
+
+</pre>
+				</td>
+				<td>
+<pre>
+(tmp 1 3)
+
+</pre>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

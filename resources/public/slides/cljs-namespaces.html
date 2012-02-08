@@ -1,0 +1,39 @@
+<html>
+<body>
+<div class="slide">
+<h2>Clojure Namespaces</h2>
+<table cellspacing="5">
+			<tr>
+				<td>Namespace Definition and Dependencies (/my/namespace.cljs)<td>
+			</tr>
+			<tr>
+				<td>
+<pre id="ns-def" style="font-size: .8em;">
+(ns my.namespace
+    (:use [clojure.string 
+            :rename {replace str-replace 
+                     reverse str-reverse}])
+    (:require [domina :as dom]))
+</pre></td>
+			</tr>
+			<tr>
+				<td>Namespace Body</td>
+			</tr>
+			<tr>
+				<td>
+<pre id="ns-body" style="font-size: .8em;">
+(def val ...)
+
+(defn foo [] .... )
+
+(defprotocol IBar
+ 	(do-something [] ))
+ 	
+(deftype Bar [a b] IBar
+         (do-something [] ...))
+</pre>
+</td>
+			</tr></table>
+</div>
+</body>
+</html>
