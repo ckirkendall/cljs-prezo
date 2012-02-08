@@ -17,7 +17,7 @@
 (def syntax-text (str "<div id='use-doc' class='doc'><h3>Immutable Data Structures</h3>"
                       "All primary data structures in ClojureScript are immutable.<br/>"  
                       "Operations on them return a 'copy', leaving the original intact.<br/>"
-                      "ClojureScript encourages controled access to mutable state,<br/>"
+                      "ClojureScript encourages controlled access to mutable state,<br/>"
                       "through constructs like the Atom. Later on in the presentation,<br/>"
                       "we will take a look at how the Atom provides backbone like <br/>"
                       "features built right into the language.</div>"))
@@ -68,7 +68,7 @@
                              "implementation details of a given protocol on a set of<br/>"
                              "types. In this case, we see Domina extending string and<br/>"
                              "Element. They are also providing default if the type does<br/>"
-                             "match a known type that assums the unknow type can be<br/>"
+                             "match a known type that assumes the unknown type can be<br/>"
                              "converted to a sequence.<br/><br/>"
                              "It is important to understand, that unlike extending an<br/>"
                              "object in JavaScript, these extentions are local to this<br/>"
@@ -76,7 +76,7 @@
 
 (def ex2-proto-et-text (str "<div id='use-doc' class='doc'><h3>Extend Type</h3>"
                              "The extend-type function allows you to extend a given type <br/>"
-                             "to a specific protcol.  In this case, we see Domina extending <br/>"
+                             "to a specific protocol.  In this case, we see Domina extending <br/>"
                              "NodeList, so it can be easily converted to a sequence.<br/>"
                              "This means that it can be used by the DomContent default<br/>"
                              "mapping.<br/><br/>"
