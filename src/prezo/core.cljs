@@ -70,8 +70,10 @@
 (em/deftemplate slide14 "slides/example1-jquery-js.html" [])
 (em/deftemplate slide15 "slides/example1-jquery-cljs.html" [])
 (em/deftemplate slide16 "slides/example2-protocols.html" [])
-(em/deftemplate slide17 "slides/atom.html" [])
-(em/deftemplate slide18 "slides/atom-demo.html" [])
+(em/deftemplate slide17 "slides/atom1.html" [])
+(em/deftemplate slide18 "slides/atom2.html" [])
+(em/deftemplate slide19 "slides/atom-demo.html" [])
+(em/deftemplate slide20 "slides/question.html" [])
 
 (def action-index (atom 0))
 
@@ -168,13 +170,30 @@
                                  :font-offset [415 -200] :font-size "1em"}))
               #(transition-slide slide17)
               #(do
-                 (transition-slide slide18)
+                 (reset-slide slide17)
+                 (anim/call-out (by-id "def-atom") con/def-atom-text
+                                {:loc [5 5] :size [350 30]  
+                                 :font-offset [5 5] :font-size "1em"}))
+               #(do
+                 (reset-slide slide17)
+                 (anim/call-out (by-id "val-atom") con/val-atom-text
+                                {:loc [5 5] :size [600 30]  
+                                 :font-offset [5 5] :font-size "1em"}))
+                #(do
+                 (reset-slide slide17)
+                 (anim/call-out (by-id "watch-atom") con/watch-atom-text
+                                {:loc [5 5] :size [650 30]  
+                                 :font-offset [5 -120] :font-size "1em"}))
+              #(transition-slide slide18)
+              #(do
+                 (transition-slide slide19)
                  (atm/user-view @atm/my-user)
                  (em/at js/document
                         ["#user-submit"](em/listen :click atm/persist-user-form)
                         ["input"] (em/do-> 
                                          (em/listen :focus disable-nav-keys)
-                                         (em/listen :blur enable-nav-keys))))])
+                                         (em/listen :blur enable-nav-keys))))
+              #(transition-slide slide20)])
 
 ; p,b,left arrow, up arrow, backspace
 (def back-key-codes #{80 66 37 38,8}) 

@@ -1,0 +1,32 @@
+<html>
+<body>
+<div class="slide">
+<h2>Atom - Little dude with a lot of backbone</h2>
+<table>
+<tr><td>Defining an Atom</td></tr>
+<tr><td><pre id="def-atom">(def my-atom (atom data))</pre></td></tr>
+<tr><td><br/>Updating an Atom</td></tr>
+<tr><td>
+<pre>
+(reset! my-atom data)
+
+or
+
+(swap! my-atom func args...)
+</pre></td></tr>
+<tr><td><br/>Adding Validators</td></tr>
+<tr><td>
+<pre id="val-atom">
+(set-validator! my-atom (fn [new-val] ...))
+</pre></td></tr>
+<tr><td><br/>Adding Watchers</td></tr>
+<tr><td>
+<pre id="watch-atom">
+(add-watch my-atom (fn [key ref new-val old-val] ...))
+</pre></td></tr>
+
+</table>
+
+</div>
+</body>
+</html>

@@ -14012,18 +14012,21 @@ prezo.atom.persist_user_form = function() {
 };
 prezo.content = {};
 prezo.content.decon_with_defualt_js = cljs.core.str.call(null, "function tmp (point) {\n", "     var x=point.x;\n", "     var y=point.y;\n", "     if(x === undefined) {\n", "          x=3;\n", "     }\n", "     log(x y);\n", "}\n\n", "tmp({ z : 3, y : 4 });\n\n\n\n\n\n\n\n\n\n");
-prezo.content.ns_use_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:use</h3>", "Provides the ability to import symbols defined in another namespace.<br>", "<br>The following filters to be applied to the symbols.<br>", "&nbsp;&nbsp;&nbsp;&nbsp;:exclude [sym1 sym2 ..]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:only [sym1 sym2 ...]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}<div>");
-prezo.content.ns_require_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:require</h3>", "Allows us to import a another namespace and provide an alias.<br>", "<br>functions and values are accessed by prefixing the alias:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) <div>");
-prezo.content.ns_proto_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Protocols</h3>", "Provide an abstraction for safely extending types without the chance of collision or the need for wrappers/adapters.<br/>", "We wills see an example later...</div>");
+prezo.content.ns_use_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:use</h3>", "Provides the ability to import symbols defined in another namespace.<br>", "<br>The following filters to be applied to the symbols:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;:exclude [sym1 sym2 ..]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:only [sym1 sym2 ...]<br/>", "&nbsp;&nbsp;&nbsp;&nbsp;:rename {new-name1 sym1 new-name2 sym2 ...}<div>");
+prezo.content.ns_require_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>:require</h3>", "Allows us to import another namespace and provide an alias.<br>", "<br>Functions and values are accessed by prefixing the alias:<br>", "&nbsp;&nbsp;&nbsp;&nbsp;(dom/append! ...) <div>");
+prezo.content.ns_proto_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Protocols</h3>", "Provide an abstraction for safely extending types without the chance of collision or the need for wrappers/adapters.<br/>", "We will see an example later...</div>");
 prezo.content.ex1_js_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>What About Collisions?</h3>", "Here we see that we must modify JQuery's namespace.<br/>", "Modern apps have simply moved the collision problem<br/>", "from the global namespace to JQuery's namespace.</div>");
-prezo.content.ex1_cljs_func_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Just a Function</h3>", "Our logging function is no longer a plugin its now just </br>", "a standard function in its own namespace.</div>");
-prezo.content.ex1_cljs_def_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Defaulting</h3>", "Here we are using argument deconstruction to provide option defaults.</div>");
-prezo.content.ex1_cljs_macro_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>'->' Macro</h3>", "Provides chaining similar to what we are use to without requiring<br/>", "functions be part of the objects namespace.</div>");
-prezo.content.ex2_proto_def_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>DomContent</h3>", "This protocol is used in Domina to define the contract required <br/>", "to make base function like 'append!' and 'prepend!' work.  <br/>", "It provides the same basic structure as JQuery's WrappedSet<br/>", "without requiring a wrapper object, that is aware of all<br/>", "implementing cases<br/><br/>", "It is closer in concept to a java interface where as long as <br/> ", "type extends this protocol Domina's base functions will work.</div>");
-prezo.content.ex2_proto_ep_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Extend Protocol</h3>", "The extend-protocol function allows you to provide<br/>", "implementation details of a given protocol on a set<br/>", "types. In this case we see Domina extending string and<br/>", "Element. They are also providing default if the type does<br/>", "match a known type that assums the unknow type can be<br/>", "converted to a sequence.<br/><br/>", "It is important to understand that unlike extending an<br/>", 
-"object in JavaScript these extentions are local to this<br/>", "namespace.</div>");
-prezo.content.ex2_proto_et_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Extend Type</h3>", "the extend-type function allows you to extend a given type <br/>", "to a specific protocl.  In this case we see Domina extending <br/>", "NodeList so it can be converted easily to a sequence.<br/>", "This means that if can be used by the DomContent default<br/>", "mapping.<br/><br/>", "It is important to understand that unlike extending an<br/>", "object in JavaScript these extentions are local to this<br/>", 
+prezo.content.ex1_cljs_func_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Just a Function</h3>", "Our logging function is no longer a plugin; its now just </br>", "a standard function in its own namespace.</div>");
+prezo.content.ex1_cljs_def_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Defaulting</h3>", "Here, we are using argument deconstruction to provide option defaults.</div>");
+prezo.content.ex1_cljs_macro_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>'->' Macro</h3>", "Provides chaining similar to what we familiar with, without requiring<br/>", "functions be part of the objects namespace.</div>");
+prezo.content.ex2_proto_def_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>DomContent</h3>", "This protocol is used in Domina to define the contract required <br/>", "to make base function like 'append!' and 'prepend!' work.  <br/>", "It provides the same basic structure as JQuery's WrappedSet<br/>", "without requiring a wrapper object, that is aware of all<br/>", "implementing cases.<br/><br/>", "It is closer in concept to a Java interface where as long as <br/> ", "type extends this protocol Domina's base functions will work.</div>");
+prezo.content.ex2_proto_ep_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Extend Protocol</h3>", "The extend-protocol function allows you to provide<br/>", "implementation details of a given protocol on a set of<br/>", "types. In this case, we see Domina extending string and<br/>", "Element. They are also providing default if the type does<br/>", "match a known type that assums the unknow type can be<br/>", "converted to a sequence.<br/><br/>", "It is important to understand, that unlike extending an<br/>", 
+"object in JavaScript, these extentions are local to this<br/>", "namespace.</div>");
+prezo.content.ex2_proto_et_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Extend Type</h3>", "The extend-type function allows you to extend a given type <br/>", "to a specific protcol.  In this case, we see Domina extending <br/>", "NodeList, so it can be easily converted to a sequence.<br/>", "This means that it can be used by the DomContent default<br/>", "mapping.<br/><br/>", "It is important to understand, that unlike extending an<br/>", "object in JavaScript, these extentions are local to this<br/>", 
 "namespace.</div>");
+prezo.content.def_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Atoms</h3>", "Even though we don't deal with Syncronization in JavaScript in the same <br/>", "way we Java, Atoms still provide controlled access to mutable state <br/>", "as they do in Clojure and using the other features of Atoms provide a<br/>", "perfect platform for building Models similar to ", "<a href='http://documentcloud.github.com/backbone/'>Backbone.js</a> models.</div>");
+prezo.content.val_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Validators</h3>", "A validator checks the value before the atom is changed and<br/>", "not valid the atom is not update and an exception is thrown.</div>");
+prezo.content.watch_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Watchers</h3>", "Watchers are triggered anytime the state of an atom changes.</div>");
 prezo.animation = {};
 prezo.animation.pos_rel_anchor = function(a, b, c) {
   var d = new goog.math.Coordinate(b, c);
@@ -14350,25 +14353,47 @@ prezo.core.slide16 = function() {
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
-enfocus.core.load_remote_dom.call(null, "slides/atom.html");
+enfocus.core.load_remote_dom.call(null, "slides/atom1.html");
 prezo.core.slide17 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/atom.html")
+    return enfocus.core.get_cached_dom.call(null, "slides/atom1.html")
   })) ? function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/atom.html")
+    return enfocus.core.get_cached_dom.call(null, "slides/atom1.html")
   }.call(null) : cljs.core.Vector.fromArray(["", function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/atom.html")
+    return enfocus.core.get_cached_dom.call(null, "slides/atom1.html")
+  }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
+  return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
+};
+enfocus.core.load_remote_dom.call(null, "slides/atom2.html");
+prezo.core.slide18 = function() {
+  var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/atom2.html")
+  })) ? function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/atom2.html")
+  }.call(null) : cljs.core.Vector.fromArray(["", function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/atom2.html")
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
 enfocus.core.load_remote_dom.call(null, "slides/atom-demo.html");
-prezo.core.slide18 = function() {
+prezo.core.slide19 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
     return enfocus.core.get_cached_dom.call(null, "slides/atom-demo.html")
   })) ? function() {
     return enfocus.core.get_cached_dom.call(null, "slides/atom-demo.html")
   }.call(null) : cljs.core.Vector.fromArray(["", function() {
     return enfocus.core.get_cached_dom.call(null, "slides/atom-demo.html")
+  }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
+  return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
+};
+enfocus.core.load_remote_dom.call(null, "slides/question.html");
+prezo.core.slide20 = function() {
+  var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/question.html")
+  })) ? function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/question.html")
+  }.call(null) : cljs.core.Vector.fromArray(["", function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/question.html")
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
@@ -14454,7 +14479,18 @@ prezo.core.actions = cljs.core.Vector.fromArray([function() {
 }, function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide17)
 }, function() {
-  prezo.core.transition_slide.call(null, prezo.core.slide18);
+  prezo.core.reset_slide.call(null, prezo.core.slide17);
+  return prezo.animation.call_out.call(null, prezo.util.by_id.call(null, "def-atom"), prezo.content.def_atom_text, cljs.core.ObjMap.fromObject(["\ufdd0'loc", "\ufdd0'size", "\ufdd0'font-offset", "\ufdd0'font-size"], {"\ufdd0'loc":cljs.core.Vector.fromArray([5, 5]), "\ufdd0'size":cljs.core.Vector.fromArray([350, 30]), "\ufdd0'font-offset":cljs.core.Vector.fromArray([5, 5]), "\ufdd0'font-size":"1em"}))
+}, function() {
+  prezo.core.reset_slide.call(null, prezo.core.slide17);
+  return prezo.animation.call_out.call(null, prezo.util.by_id.call(null, "val-atom"), prezo.content.val_atom_text, cljs.core.ObjMap.fromObject(["\ufdd0'loc", "\ufdd0'size", "\ufdd0'font-offset", "\ufdd0'font-size"], {"\ufdd0'loc":cljs.core.Vector.fromArray([5, 5]), "\ufdd0'size":cljs.core.Vector.fromArray([600, 30]), "\ufdd0'font-offset":cljs.core.Vector.fromArray([5, 5]), "\ufdd0'font-size":"1em"}))
+}, function() {
+  prezo.core.reset_slide.call(null, prezo.core.slide17);
+  return prezo.animation.call_out.call(null, prezo.util.by_id.call(null, "watch-atom"), prezo.content.watch_atom_text, cljs.core.ObjMap.fromObject(["\ufdd0'loc", "\ufdd0'size", "\ufdd0'font-offset", "\ufdd0'font-size"], {"\ufdd0'loc":cljs.core.Vector.fromArray([5, 5]), "\ufdd0'size":cljs.core.Vector.fromArray([650, 30]), "\ufdd0'font-offset":cljs.core.Vector.fromArray([5, -120]), "\ufdd0'font-size":"1em"}))
+}, function() {
+  return prezo.core.transition_slide.call(null, prezo.core.slide18)
+}, function() {
+  prezo.core.transition_slide.call(null, prezo.core.slide19);
   prezo.atom.user_view.call(null, cljs.core.deref.call(null, prezo.atom.my_user));
   var a = enfocus.core.nodes__GT_coll.call(null, document);
   cljs.core.doall.call(null, cljs.core.map.call(null, function(a) {
@@ -14463,6 +14499,8 @@ prezo.core.actions = cljs.core.Vector.fromArray([function() {
     return a
   }, a));
   return document
+}, function() {
+  return prezo.core.transition_slide.call(null, prezo.core.slide20)
 }]);
 prezo.core.back_key_codes = cljs.core.set([66, 37, 38, 8, 80]);
 prezo.core.start_key_codes = cljs.core.set([83]);

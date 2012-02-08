@@ -1,0 +1,51 @@
+<html>
+<body>
+<div class="slide">
+<h2>Atom - Example</h2>
+<table>
+<tr><td>Model Setup</td></tr>
+<tr><td>
+<pre style="font-size: .6em;">
+(defrecord UserModel [name email twitter])
+
+(def my-user (atom (UserModel. "Creighton Kirkendall"
+                               "ckirkendall@gmail.com"
+                               "@crkirkendall")))
+</pre>
+</td></tr>
+<tr><td>Validators</td></tr>
+<tr><td> 
+<pre style="font-size: .6em;">
+(defn user-validator [new-val]
+ (let [check-map {:name (not (nil? (re-matches #"\S+.*" (:name new-val))))
+                  :email (not (nil? (re-matches #".+@.+\..+" (:email new-val))))
+                  :twitter (not (nil? (re-matches #"@\S+" (:twitter new-val))))}]
+   (if (not-every? true? (vals check-map))
+     (throw (FormError. check-map))
+     new-val)))
+
+(set-validator! my-user user-validator)
+</pre>
+</td></tr>
+<tr><td>Watchers</td></tr>
+<tr><td>
+<pre style="font-size: .6em;">
+(add-watch my-user :user-view (fn [key ref old-val new-val]
+                                (user-view new-val)))
+</pre>
+</td></tr>
+<tr><td>Views</td></tr>
+<tr><td>
+<pre style="font-size: .6em;">
+(defn user-view [user-val]
+ (em/at (by-id "user-div")
+        [".name"] (em/content (:name user-val))
+        [".email"] (em/content (:email user-val))
+        [".twitter"] (em/content (:twitter user-val))))
+</pre>
+</td></tr>
+</table>
+
+</div>
+</body>
+</html>

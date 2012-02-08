@@ -30,9 +30,7 @@
      (throw (FormError. check-map))
      new-val)))
 
-
 (set-validator! my-user user-validator)
-
 
 ;;;;;;;;;;;;;;;;;;;; Watchers ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
