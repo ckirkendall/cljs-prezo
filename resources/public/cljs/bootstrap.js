@@ -14024,8 +14024,8 @@ prezo.content.ex2_proto_ep_text = cljs.core.str.call(null, "<div id='use-doc' cl
 "object in JavaScript, these extentions are local to this<br/>", "namespace.</div>");
 prezo.content.ex2_proto_et_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Extend Type</h3>", "The extend-type function allows you to extend a given type <br/>", "to a specific protcol.  In this case, we see Domina extending <br/>", "NodeList, so it can be easily converted to a sequence.<br/>", "This means that it can be used by the DomContent default<br/>", "mapping.<br/><br/>", "It is important to understand, that unlike extending an<br/>", "object in JavaScript, these extentions are local to this<br/>", 
 "namespace.</div>");
-prezo.content.def_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Atoms</h3>", "Even though we don't deal with Syncronization in JavaScript in the same <br/>", "way we Java, Atoms still provide controlled access to mutable state <br/>", "as they do in Clojure and using the other features of Atoms provide a<br/>", "perfect platform for building Models similar to ", "<a href='http://documentcloud.github.com/backbone/'>Backbone.js</a> models.</div>");
-prezo.content.val_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Validators</h3>", "A validator checks the value before the atom is changed and<br/>", "not valid the atom is not update and an exception is thrown.</div>");
+prezo.content.def_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Atoms</h3>", "Even though we don't deal with Syncronization in JavaScript in the same <br/>", "way we do in Java, Atoms still provide controlled access to mutable state,<br/>", "as they do in Clojure. Other features of Atoms provide a perfect<br/>", "platform for building models similar to ", "<a href='http://documentcloud.github.com/backbone/'>Backbone.js</a> models.</div>");
+prezo.content.val_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Validators</h3>", "A validator checks the value before the atom is changed and,<br/>", "if not valid, the atom is not update and an exception is thrown.</div>");
 prezo.content.watch_atom_text = cljs.core.str.call(null, "<div id='use-doc' class='doc'><h3>Watchers</h3>", "Watchers are triggered anytime the state of an atom changes.</div>");
 prezo.animation = {};
 prezo.animation.pos_rel_anchor = function(a, b, c) {
@@ -14386,8 +14386,19 @@ prezo.core.slide19 = function() {
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
-enfocus.core.load_remote_dom.call(null, "slides/question.html");
+enfocus.core.load_remote_dom.call(null, "slides/about-prezo.html");
 prezo.core.slide20 = function() {
+  var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/about-prezo.html")
+  })) ? function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/about-prezo.html")
+  }.call(null) : cljs.core.Vector.fromArray(["", function() {
+    return enfocus.core.get_cached_dom.call(null, "slides/about-prezo.html")
+  }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
+  return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
+};
+enfocus.core.load_remote_dom.call(null, "slides/question.html");
+prezo.core.slide21 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
     return enfocus.core.get_cached_dom.call(null, "slides/question.html")
   })) ? function() {
@@ -14501,6 +14512,8 @@ prezo.core.actions = cljs.core.Vector.fromArray([function() {
   return document
 }, function() {
   return prezo.core.transition_slide.call(null, prezo.core.slide20)
+}, function() {
+  return prezo.core.transition_slide.call(null, prezo.core.slide21)
 }]);
 prezo.core.back_key_codes = cljs.core.set([66, 37, 38, 8, 80]);
 prezo.core.start_key_codes = cljs.core.set([83]);

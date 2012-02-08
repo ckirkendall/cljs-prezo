@@ -77,14 +77,14 @@
 
 (def def-atom-text (str "<div id='use-doc' class='doc'><h3>Atoms</h3>"
                              "Even though we don't deal with Syncronization in JavaScript in the same <br/>"
-                             "way we Java, Atoms still provide controlled access to mutable state <br/>"
-                             "as they do in Clojure and using the other features of Atoms provide a<br/>"
-                             "perfect platform for building Models similar to "
+                             "way we do in Java, Atoms still provide controlled access to mutable state,<br/>"
+                             "as they do in Clojure. Other features of Atoms provide a perfect<br/>"
+                             "platform for building models similar to "
                              "<a href='http://documentcloud.github.com/backbone/'>Backbone.js</a> models.</div>"))
 
 (def val-atom-text (str "<div id='use-doc' class='doc'><h3>Validators</h3>"
-                             "A validator checks the value before the atom is changed and<br/>"
-                             "not valid the atom is not update and an exception is thrown.</div>"))
+                             "A validator checks the value before the atom is changed and,<br/>"
+                             "if not valid, the atom is not update and an exception is thrown.</div>"))
 
 (def watch-atom-text (str "<div id='use-doc' class='doc'><h3>Watchers</h3>" 
                              "Watchers are triggered anytime the state of an atom changes.</div>"))

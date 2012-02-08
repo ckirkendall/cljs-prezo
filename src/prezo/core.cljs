@@ -73,7 +73,8 @@
 (em/deftemplate slide17 "slides/atom1.html" [])
 (em/deftemplate slide18 "slides/atom2.html" [])
 (em/deftemplate slide19 "slides/atom-demo.html" [])
-(em/deftemplate slide20 "slides/question.html" [])
+(em/deftemplate slide20 "slides/about-prezo.html" [])
+(em/deftemplate slide21 "slides/question.html" [])
 
 (def action-index (atom 0))
 
@@ -193,7 +194,8 @@
                         ["input"] (em/do-> 
                                          (em/listen :focus disable-nav-keys)
                                          (em/listen :blur enable-nav-keys))))
-              #(transition-slide slide20)])
+              #(transition-slide slide20)
+              #(transition-slide slide21)])
 
 ; p,b,left arrow, up arrow, backspace
 (def back-key-codes #{80 66 37 38,8}) 
