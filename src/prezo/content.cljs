@@ -15,10 +15,10 @@
 
 
 (def syntax-text (str "<div id='use-doc' class='doc'><h3>Immutable Data Structures</h3>"
-                      "All primary data structures in ClojureScript are imutable.<br/>"  
+                      "All primary data structures in ClojureScript are immutable.<br/>"  
                       "Operations on them return a 'copy', leaving the original intact.<br/>"
-                      "ClojureScript encourages controled access to mutable state<br/>"
-                      "through constructs like the Atom. Later on in the presentation<br/>"
+                      "ClojureScript encourages controled access to mutable state,<br/>"
+                      "through constructs like the Atom. Later on in the presentation,<br/>"
                       "we will take a look at how the Atom provides backbone like <br/>"
                       "features built right into the language.</div>"))
 
