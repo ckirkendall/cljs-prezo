@@ -14,7 +14,7 @@
                                  "tmp({ z : 3, y : 4 });\n\n\n\n\n\n\n\n\n\n"))  
 
 
-(def syntax-text (str "<div id='use-doc' class='doc'><h3>Imutable Data Structures</h3>"
+(def syntax-text (str "<div id='use-doc' class='doc'><h3>Immutable Data Structures</h3>"
                       "All primary data structures in ClojureScript are imutable.<br/>"  
                       "Operations on them return a 'copy', leaving the original intact.<br/>"
                       "ClojureScript encourages controled access to mutable state<br/>"
