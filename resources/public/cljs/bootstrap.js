@@ -14210,17 +14210,6 @@ prezo.core.slide3 = function() {
   }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
   return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
 };
-enfocus.core.load_remote_dom.call(null, "slides/rainbows.html");
-prezo.core.slide4 = function() {
-  var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/rainbows.html")
-  })) ? function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/rainbows.html")
-  }.call(null) : cljs.core.Vector.fromArray(["", function() {
-    return enfocus.core.get_cached_dom.call(null, "slides/rainbows.html")
-  }]), b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null), a = cljs.core.truth_(!0) ? enfocus.core.create_hidden_dom.call(null, a) : a;
-  return cljs.core.truth_(!0) ? (enfocus.core.reset_ids.call(null, b, a), enfocus.core.remove_node_return_child.call(null, a)) : a
-};
 enfocus.core.load_remote_dom.call(null, "slides/clojure-syntax.html");
 prezo.core.slide5 = function() {
   var a = cljs.core.truth_(cljs.core.fn_QMARK_.call(null, function() {
