@@ -229,7 +229,7 @@
 (em/defaction reset-slide [init-func]
  ["#content-pane"] (em/content (init-func))
  [".slide"] (em/set-style :opacity "1.0")
- [".slide"] (em/set-style :filter "alpha(opacity=0)"))
+ [".slide"] (em/set-style :filter "alpha(opacity=100)"))
 
 
               

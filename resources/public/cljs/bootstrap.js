@@ -14546,7 +14546,7 @@ prezo.core.reset_slide = function(a) {
   cljs.core.doall.call(null, cljs.core.map.call(null, function(b) {
     enfocus.core.en_content.call(null, a.call(null)).call(null, enfocus.core.css_select.call(null, "", b, cljs.core.Vector.fromArray(["#content-pane"])));
     enfocus.core.en_set_style.call(null, "\ufdd0'opacity", "1.0").call(null, enfocus.core.css_select.call(null, "", b, cljs.core.Vector.fromArray([".slide"])));
-    enfocus.core.en_set_style.call(null, "\ufdd0'filter", "alpha(opacity=0)").call(null, enfocus.core.css_select.call(null, "", b, cljs.core.Vector.fromArray([".slide"])));
+    enfocus.core.en_set_style.call(null, "\ufdd0'filter", "alpha(opacity=100)").call(null, enfocus.core.css_select.call(null, "", b, cljs.core.Vector.fromArray([".slide"])));
     return b
   }, b));
   return document
