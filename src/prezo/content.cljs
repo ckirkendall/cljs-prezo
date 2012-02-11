@@ -44,7 +44,7 @@
                       "from the global namespace to JQuery's namespace.</div>"))
             
 (def ex1-cljs-func-text (str "<div id='use-doc' class='doc'><h3>Just a Function</h3>"
-                             "Our logging function is no longer a plugin; its now just </br>"
+                             "Our logging function is no longer a plugin; it's now just </br>"
                              "a standard function in its own namespace.</div>"))
 
 (def ex1-cljs-def-text (str "<div id='use-doc' class='doc'><h3>Defaulting</h3>"
@@ -52,11 +52,11 @@
 
 (def ex1-cljs-macro-text (str "<div id='use-doc' class='doc'><h3>'->' Macro</h3>"
                              "Provides chaining similar to what we familiar with, without requiring<br/>"
-                             "functions be part of the objects namespace.</div>"))
+                             "functions be part of the object's namespace.</div>"))
 
 (def ex2-proto-def-text (str "<div id='use-doc' class='doc'><h3>DomContent</h3>"
                              "This protocol is used in Domina to define the contract required <br/>"
-                             "to make base function like 'append!' and 'prepend!' work.  <br/>"
+                             "to make base functions like 'append!' and 'prepend!' work.  <br/>"
                              "It provides the same basic structure as JQuery's WrappedSet<br/>"
                              "without requiring a wrapper object, that is aware of all<br/>"
                              "implementing cases.<br/><br/>"
@@ -71,7 +71,7 @@
                              "match a known type that assumes the unknown type can be<br/>"
                              "converted to a sequence.<br/><br/>"
                              "It is important to understand, that unlike extending an<br/>"
-                             "object in JavaScript, these extentions are local to this<br/>"
+                             "object in JavaScript, these extensions are local to this<br/>"
                              "namespace.</div>"))
 
 (def ex2-proto-et-text (str "<div id='use-doc' class='doc'><h3>Extend Type</h3>"
@@ -81,11 +81,11 @@
                              "This means that it can be used by the DomContent default<br/>"
                              "mapping.<br/><br/>"
                              "It is important to understand, that unlike extending an<br/>"
-                             "object in JavaScript, these extentions are local to this<br/>"
+                             "object in JavaScript, these extensions are local to this<br/>"
                              "namespace.</div>"))
 
 (def def-atom-text (str "<div id='use-doc' class='doc'><h3>Atoms</h3>"
-                             "Even though we don't deal with Syncronization in JavaScript in the same <br/>"
+                             "Even though we don't deal with Synchronization in JavaScript in the same <br/>"
                              "way we do in Java, Atoms still provide controlled access to mutable state,<br/>"
                              "as they do in Clojure. Other features of Atoms provide a perfect<br/>"
                              "platform for building models similar to "
