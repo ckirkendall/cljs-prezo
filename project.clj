@@ -6,14 +6,12 @@
                  [enfocus "0.9.1-SNAPSHOT"]]
   :dev-dependencies [[lein-eclipse "1.0.0"]
                      [lein-cljsbuild "0.0.7"]]
-  :cljsbuild {
-              ; The path to the top-level ClojureScript source directory:
-              :source-path "src"
-              ; The standard ClojureScript compiler options:
-              ; (See the ClojureScript compiler documentation for details.)
-              :compiler {
-                         :output-dir "site/cljs" 
-                         :output-to "site/cljs/cinjs.js"         
-                         :optimizations :whitespace
-                         :pretty-print true}})
+  :cljsbuild
+    {:builds
+     [{:source-path "src",
+       :compiler
+       {:output-dir "resources/public/cljs",
+        :output-to "resources/public/cljs/bootstrap.js",
+        :optimizations :whitespace,
+        :pretty-print true}}]})
                
