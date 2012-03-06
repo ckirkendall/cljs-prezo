@@ -4,8 +4,6 @@
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [goog-jar "1.0.0"]
                  [enfocus "0.9.1-SNAPSHOT"]]
-  :dev-dependencies [[lein-eclipse "1.0.0"]
-                     [lein-cljsbuild "0.0.7"]]
   :cljsbuild
     {:builds
      [{:source-path "src",

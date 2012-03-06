@@ -2,7 +2,21 @@
 <body>
 <div class="slide">
 <h2>Macros</h2>
-<p>I heard you like programs so I gave you a program in your program to produce your program.
+<div id="macro-text" style="font-size: 2em;">Macros are the difference between having a 
+tool box and owning a machine shop.</div>
+<div style="font-size: 3em;"><br/>Enfocus:</div>
+<pre style="font-size: 1em;">
+
+(defaction setup-pane [width height]
+     ["#menu"] (delay 1000 (do->
+                             (set-style :display "inline")
+                             (fade-in 1000)))
+     ["#content-pane"] (chain
+                         (resize 5 height 500)
+                         (resize width :curheight 500)
+                         (content (home))))
+                         
+</pre>
 </div>
 </body>
 </html>

@@ -54,10 +54,12 @@
 
 ;;;;;;;;;;;;;;;;;;; Slides;;;;;;;;;;;;;;;;;;;;;;;
 
+
 (em/deftemplate slide1 "slides/why-clojure.html" [])
 (em/deftemplate slide2 "slides/what-clojure.html" [])
-(em/deftemplate slide3 "slides/fear.html" [])
-;(em/deftemplate slide4 "slides/rainbows.html" [])
+(em/deftemplate slide2-5 "slides/what-to-do.html" [])
+(em/deftemplate slide3 "slides/why-clojurescript.html" [])
+(em/deftemplate slide4 "slides/what-clojurescript.html" [])
 (em/deftemplate slide5 "slides/clojure-syntax.html" [])
 (em/deftemplate slide6 "slides/defining-functions.html" []) 
 (em/deftemplate slide7 "slides/overloading.html" [])  
@@ -66,31 +68,56 @@
 (em/deftemplate slide10 "slides/js-interop.html" [])
 (em/deftemplate slide11 "slides/js-namespaces.html" [])
 (em/deftemplate slide12 "slides/cljs-namespaces.html" [])
-(em/deftemplate slide13 "slides/thats-nice.html" [])
-(em/deftemplate slide14 "slides/example1-jquery-js.html" [])
-(em/deftemplate slide15 "slides/example1-jquery-cljs.html" [])
-(em/deftemplate slide16 "slides/example2-protocols.html" [])
-(em/deftemplate slide17 "slides/atom1.html" [])
-(em/deftemplate slide18 "slides/atom2.html" [])
-(em/deftemplate slide19 "slides/atom-demo.html" [])
-(em/deftemplate slide20 "slides/cool-things-not-covered.html" [])
-(em/deftemplate slide21 "slides/about-prezo.html" [])
-(em/deftemplate slide22 "slides/question.html" [])
+(em/deftemplate slide13 "slides/macros.html" [])
+(em/deftemplate slide14 "slides/what-are-we-missing.html" [])
+(em/deftemplate slide15 "slides/choosing-your-materials.html" [])
+
+(em/deftemplate slide16 "slides/why-not-closure-lib.html" [])
+(em/deftemplate slide17 "slides/why-closure-lib.html" [])
+(em/deftemplate slide18 "slides/closure-naming.html" [])
+(em/deftemplate slide19 "slides/closure-lib-info-1.html" [])
+(em/deftemplate slide20 "slides/closure-lib-info-2.html" [])
+(em/deftemplate slide21 "slides/closure-lib-info-3.html" [])
+(em/deftemplate slide22 "slides/closure-third-party-tools.html" [])
+(em/deftemplate slide23 "slides/closure-externs-foreign-libs.html" [])
+(em/deftemplate slide24 "slides/atom-demo.html" [])
+(em/deftemplate slide25 "slides/closure-extern-cost.html" [])
+(em/deftemplate slide26 "slides/managing-upstream-deps.html" [])
+(em/deftemplate slide27 "slides/challenges-1.html" [])
+(em/deftemplate slide28 "slides/challenges-2.html" [])
+(em/deftemplate slide29 "slides/challenges-3.html" [])
+(em/deftemplate slide30 "slides/challenges-4.html" [])
+
+(em/deftemplate slide31 "slides/parting-advice.html" [])
+(em/deftemplate slide32 "slides/about-prezo.html" [])
+(em/deftemplate slide33 "slides/question.html" [])
 
 (def action-index (atom 0))
 
 (def actions [#(transition-slide slide1)
               #(transition-slide slide2)
-              #(do
+              #(do  
                  (reset-slide slide2)
+                 (anim/call-out (by-id "clj-is") 
+                                con/concurrency
+                                {:font-size "1em" :loc [-10 183] :size [180 30]
+                                 :font-offset [5 80]}))
+              #(transition-slide slide2-5)
+              #(do  
+                 (reset-slide slide2-5)
+                 (em/at (by-id "port-text") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide2-5)
+                 (em/at js/document
+                        ["#port-text"] (em/set-style :display "")
+                        ["#huh-text"] (em/set-style :display "")))
+              #(transition-slide slide3)
+              #(transition-slide slide4)
+              #(do  
+                 (reset-slide slide4)
                  (anim/call-out (by-id "clj-is") 
                                 "Bold Claims!" 
                                 {:font-size "3em" :loc [-10 220] :size [300 100]}))
-              #(transition-slide slide3)
-              #(do
-                 (reset-slide slide3)
-                 (anim/scary-parens))
-              ;#(transition-slide slide4)
               #(transition-slide slide5)
               #(do
                  (reset-slide slide5)
@@ -138,72 +165,98 @@
                                 {:loc [5 75] :size [310 90]  
                                  :font-offset [5 5] :font-size "1em"}))
               #(transition-slide slide13)
+              #(do
+                 (reset-slide slide13)
+                 (anim/call-out (by-id "macro-text") con/macro-text 
+                                {:loc [-4 -2] :size [110 30]  
+                                 :font-offset [5 5] :font-size "1em"}))
               #(transition-slide slide14)
-              #(do
+              #(do  
                  (reset-slide slide14)
-                 (anim/call-out (by-id "js-plugin-def") con/ex1-js-text
-                                {:loc [30 20] :size [310 90]  
-                                 :font-offset [5 5] :font-size "1em"}))
+                 (em/at (by-id "missing-text") (em/set-style :display "")))
               #(transition-slide slide15)
-              #(do
-                 (reset-slide slide15)
-                 (anim/call-out (by-id "cljs-plugin-def") con/ex1-cljs-func-text
-                                {:loc [10 38] :size [420 50]  
-                                 :font-offset [5 5] :font-size "1em"}))
-              #(do
-                 (reset-slide slide15)
-                 (anim/call-out (by-id "cljs-plugin-def") con/ex1-cljs-def-text
-                                {:loc [120 38] :size [320 20]  
-                                 :font-offset [5 5] :font-size "1em"}))
-              #(do
-                 (reset-slide slide15)
-                 (anim/call-out (by-id "cljs-plugin-call") con/ex1-cljs-macro-text
-                                {:loc [7 7] :size [275 60]  
-                                 :font-offset [5 5] :font-size "1em"}))
               #(transition-slide slide16)
-              #(do
-                 (reset-slide slide16)
-                 (anim/call-out (by-id "cljs-proto-def") con/ex2-proto-def-text
-                                {:loc [7 7] :size [580 50]  
-                                 :font-offset [5 5] :font-size "1em"}))
-              #(do
-                 (reset-slide slide16)
-                 (anim/call-out (by-id "cljs-proto-call") con/ex2-proto-ep-text
-                                {:loc [7 7] :size [440 190]  
-                                 :font-offset [455 -190] :font-size "1em"}))
-              #(do
-                 (reset-slide slide16)
-                 (anim/call-out (by-id "cljs-proto-call") con/ex2-proto-et-text
-                                {:loc [7 200] :size [400 50]  
-                                 :font-offset [415 -200] :font-size "1em"}))
               #(transition-slide slide17)
-              #(do
-                 (reset-slide slide17)
-                 (anim/call-out (by-id "def-atom") con/def-atom-text
-                                {:loc [5 5] :size [350 30]  
-                                 :font-offset [5 5] :font-size "1em"}))
-               #(do
-                 (reset-slide slide17)
-                 (anim/call-out (by-id "val-atom") con/val-atom-text
-                                {:loc [5 5] :size [600 30]  
-                                 :font-offset [5 5] :font-size "1em"}))
-                #(do
-                 (reset-slide slide17)
-                 (anim/call-out (by-id "watch-atom") con/watch-atom-text
-                                {:loc [5 5] :size [650 30]  
-                                 :font-offset [5 -120] :font-size "1em"}))
               #(transition-slide slide18)
+              #(transition-slide slide19)
+              #(transition-slide slide20)
+              #(transition-slide slide21)
+              #(transition-slide slide22)
+              #(transition-slide slide23)
+              #(do  
+                 (reset-slide slide23)
+                 (em/at (by-id "missing-text") (em/set-style :display "")))
               #(do
-                 (transition-slide slide19)
+                 (transition-slide slide24)
                  (atm/user-view @atm/my-user)
                  (em/at js/document
                         ["#user-submit"](em/listen :click atm/persist-user-form)
                         ["input"] (em/do-> 
                                          (em/listen :focus disable-nav-keys)
                                          (em/listen :blur enable-nav-keys))))
-              #(transition-slide slide20)
-              #(transition-slide slide21)
-              #(transition-slide slide22)])
+              #(transition-slide slide25)
+              #(transition-slide slide26)
+              #(do  
+                 (reset-slide slide26)
+                 (em/at (by-id "missing-text") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide26)
+                 (em/at (by-id "clj-is") (em/set-style :display "")))
+              #(transition-slide slide27)
+              #(do  
+                 (reset-slide slide27)
+                 (em/at (by-id "google-img") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide27)
+                 (em/at (by-id "google-img") (em/set-style :display ""))
+                 (em/at (by-id "missing-text") (em/set-style :display "")))
+              #(transition-slide slide28)
+              #(do  
+                 (reset-slide slide28)
+                 (em/at (by-id "rtfm-img") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide28)
+                 (em/at (by-id "rtfm-x-img") (em/set-style :display ""))
+                 (em/at (by-id "missing-text") (em/set-style :display "")))
+              #(do  
+                 (transition-slide slide29)
+                 (let [size (dom/getViewportSize)]
+                   (em/at (by-id "cockroach-bug")
+                          (em/do->
+                            (em/move -300 (+ (.-height size) 300))
+                            (em/set-style :display "")
+                            (em/delay 2000 (em/move (+(.-width size) 200) -300 3000))))))
+              #(transition-slide slide30)
+              #(transition-slide slide31)
+              #(do  
+                 (reset-slide slide31)
+                 (em/at (by-id "missing-text1") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide31)
+                 (em/at (by-id "missing-text1") (em/set-style :display ""))
+                 (em/at (by-id "missing-text2") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide31)
+                 (em/at (by-id "missing-text1") (em/set-style :display ""))
+                 (em/at (by-id "missing-text2") (em/set-style :display ""))
+                 (em/at (by-id "missing-text3") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide31)
+                 (em/at (by-id "missing-text1") (em/set-style :display ""))
+                 (em/at (by-id "missing-text2") (em/set-style :display ""))
+                 (em/at (by-id "missing-text3") (em/set-style :display ""))
+                 (em/at (by-id "missing-text4") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide31)
+                 (em/at (by-id "missing-text1") (em/set-style :display ""))
+                 (em/at (by-id "missing-text2") (em/set-style :display ""))
+                 (em/at (by-id "missing-text3") (em/set-style :display ""))
+                 (em/at (by-id "missing-text4") (em/set-style :display ""))
+                 (em/at (by-id "missing-text5") (em/set-style :display "")))
+              #(transition-slide slide32)
+              #(transition-slide slide33)])
+
+             
 
 ; p,b,left arrow, up arrow, backspace
 (def back-key-codes #{80 66 37 38,8}) 

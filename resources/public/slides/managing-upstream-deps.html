@@ -1,0 +1,24 @@
+<html>
+<body>
+<div class="slide">
+<h2>Managing Upstream Dependencies</h2>
+<div id="missing-text" class='call-text' style="display: none; font-size: 3em;">Should users have to worry about a libraries upstream dependencies?</div>
+<div id="clj-is" class="one-col" style="display: none;">
+<h3>Experimental Feature - deps.cljs</h3>
+<ul>
+<li>Place it in the root of your jar or zip</li>
+<li> allows you to specify :libs, :foreign-libs, and :externs to be loaded from the classpath.</li>
+</ul>
+<br/><br/>
+deps.cljs
+<pre>
+{
+:foreign-libs [{:file "libs/my-foreign-lib.js"
+                 :provides "org.compay.mylib"}]
+ :libs ["goog/dom/query.js"]
+ :extern ["js/jquery/jquery.js"]
+ } 
+</pre>
+</div>
+</body>
+</html>

@@ -14,13 +14,17 @@
                                  "tmp({ z : 3, y : 4 });\n\n\n\n\n\n\n\n\n\n"))  
 
 
+(def concurrency (str "<div id='use-doc' class='doc'><h3>Concurrency</h3>"
+                     "In the same way Java solved the biggest challenge facing<br/>"
+                     "the productivity of developers in the 90's, memory management.<br/>"
+                     "One Clojure's main design goals is to solve the biggest<br/>"  
+                     "issue facing developers today, concurrency. <br/>"))
+
 (def syntax-text (str "<div id='use-doc' class='doc'><h3>Immutable Data Structures</h3>"
                       "All primary data structures in ClojureScript are immutable.<br/>"  
                       "Operations on them return a 'copy', leaving the original intact.<br/>"
                       "ClojureScript encourages controlled access to mutable state,<br/>"
-                      "through constructs like the Atom. Later on in the presentation,<br/>"
-                      "we will take a look at how the Atom provides backbone like <br/>"
-                      "features built right into the language.</div>"))
+                      "through constructs like the Atom. </div>"))
 
 (def ns-use-text (str "<div id='use-doc' class='doc'><h3>:use</h3>"
                       "Provides the ability to import symbols defined in another namespace.<br>"  
@@ -84,12 +88,9 @@
                              "object in JavaScript, these extensions are local to this<br/>"
                              "namespace.</div>"))
 
-(def def-atom-text (str "<div id='use-doc' class='doc'><h3>Atoms</h3>"
-                             "Even though we don't deal with Synchronization in JavaScript in the same <br/>"
-                             "way we do in Java, Atoms still provide controlled access to mutable state,<br/>"
-                             "as they do in Clojure. Other features of Atoms provide a perfect<br/>"
-                             "platform for building models similar to "
-                             "<a href='http://documentcloud.github.com/backbone/'>Backbone.js</a> models.</div>"))
+(def macro-text (str "<div id='use-doc' class='doc'><h3>Macros</h3>"
+                             "Macros are more about building the tools and libraries than <br/>"
+                             "they are about building applications.<br/>"))
 
 (def val-atom-text (str "<div id='use-doc' class='doc'><h3>Validators</h3>"
                              "A validator checks the value before the atom is changed and,<br/>"

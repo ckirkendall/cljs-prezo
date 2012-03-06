@@ -200,9 +200,24 @@ input {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
+
+#author-inline {
+	border: 2px solid #3c4764;
+	width: 300px;
+	background-color: #fff;
+	padding: 20px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+ 	font-size: .5em;
+}
 #aname{
  font-family: "Chunkfive", serif;	
  font-size: 1.5em;
+  margin-bottom: 0px;
+}
+#anameb{
+ font-family: "Chunkfive", serif;	
+ font-size: 1.2em;
   margin-bottom: 0px;
 }
 
@@ -309,6 +324,31 @@ font-size: 1.6em;
 
 .two-col li {
    list-style: none;
+}
+
+.one-col h3 {
+    margin-top: 0px
+}
+
+.one-col {	
+    font-size: 1.4em;
+	float: left;
+	margin: 10px;
+}
+
+.one-col li {
+   list-style: none;
+}
+
+#cockroach-bug{
+	position: fixed;
+}
+#cockroach {
+	/* for firefox, safari, chrome, etc. */
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	/* for ie */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.6);
 }
 
 .call-block {

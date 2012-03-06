@@ -1,0 +1,32 @@
+<html>
+<body>
+<div class="slide">
+<h2>Should I Use Google Closure?</h2>
+<div id="clj-is" class="one-col">
+<h3 style="padding-top: 10px;">Why you wouldn't use Closure?</h3>
+<ul>
+<li>The learning curve is steep.</li>
+<li>The codebase is huge.</li>
+<li>The API is broad, disorienting, and low level.</li>
+<li>Java-like conventions make it seem verbose and complex.</li>
+</ul>
+<br/>
+<pre style="font-size: .6em;">
+/**
+ * Gets the DomHelper object for the document where the element resides.
+ * @param {Node|Window=} opt_element If present, gets the DomHelper for this
+ *     element.
+ * @return {!goog.dom.DomHelper} The DomHelper.
+ */
+goog.dom.getDomHelper = function(opt_element) {
+  return opt_element ?
+      new goog.dom.DomHelper(goog.dom.getOwnerDocument(opt_element)) :
+      (goog.dom.defaultDomHelper_ ||
+          (goog.dom.defaultDomHelper_ = new goog.dom.DomHelper()));
+};
+</pre>
+</div>
+
+</div>
+</body>
+</html>

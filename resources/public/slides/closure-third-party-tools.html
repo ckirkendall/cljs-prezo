@@ -1,0 +1,29 @@
+<html>
+<body>
+<div class="slide">
+<h2>Closure Third Party Tools</h2>
+<div id="clj-is" class="one-col">
+<!-- <h3 style="padding-top: 5x;">Tools</h3>  -->
+<ul>
+<li>goog.dom.query (css3 selector used by Enfocus)</li>
+<li>goog.dom.html (html parser)</li>
+<li>goog.silverlight (silverlight.js compatible with compiler)</li>
+<li><a href="">more info</a></li>
+</ul>
+<br/>
+<p style="font-size: .8em;">These tools where developed by third party groups but are bundled with the Google Closure Library and use the "goog" namespace.</p>
+<br/>
+<pre style="font-size: .8em;">
+
+(em/from js/document
+         :name ["#user-name"] (em/get-prop :value)
+         :email ["#user-email"] (em/get-prop :value)
+         :twitter ["#user-twitter"] (em/get-prop :value)))
+
+</pre>
+</div>
+
+</div>
+
+</body>
+</html>
