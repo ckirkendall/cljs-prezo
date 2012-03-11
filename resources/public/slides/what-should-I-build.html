@@ -1,0 +1,40 @@
+<html>
+<body>
+<div class="slide">
+<h2>What should I build?</h2>
+<div id="clj-is" class="one-col">
+<h3 style="padding-top: 5px">Skies the Limit -> Machine Shop</h3>
+<pre id="java-code" style="display: none; font-size: .7em;">
+function myTestSample (){
+  var mock-world = google.testing.createMethodMock(my.namespace ,"world")
+  mock-world().$returns("test")
+              .$times(2);
+    
+  mock-world.$replay()
+    
+  assertEquals("hello test", hello());
+  mock-world.$verify();
+}
+
+var runner = new goog.testing.TestRunner();
+var tcase = new goog.testing.TestCase();
+var test = new goog.test.TestCase.Test("hello world test" myTestSample);
+
+tcase.add(myTestSample);
+
+function init(){
+	runner.initialize(tcase);
+	runner.execute();
+}
+</pre>
+<pre id="clojure-code" style="display: none; font-size: .8em;">
+
+(fact "hello world test"
+  (hello) => "hello test"
+  (provided 
+    (world) => "test" :times 2))
+ 
+</pre>
+</div>
+</body>
+</html>

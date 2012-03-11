@@ -70,6 +70,8 @@
 (em/deftemplate slide12 "slides/cljs-namespaces.html" [])
 (em/deftemplate slide13 "slides/macros.html" [])
 (em/deftemplate slide14 "slides/what-are-we-missing.html" [])
+
+(em/deftemplate slide14-5 "slides/what-should-I-build.html" [])
 (em/deftemplate slide15 "slides/choosing-your-materials.html" [])
 
 (em/deftemplate slide16 "slides/why-not-closure-lib.html" [])
@@ -174,6 +176,13 @@
               #(do  
                  (reset-slide slide14)
                  (em/at (by-id "missing-text") (em/set-style :display "")))
+              #(transition-slide slide14-5)
+              #(do  
+                 (reset-slide slide14-5)
+                 (em/at (by-id "java-code") (em/set-style :display "")))
+              #(do  
+                 (reset-slide slide14-5)
+                 (em/at (by-id "clojure-code") (em/set-style :display "")))
               #(transition-slide slide15)
               #(transition-slide slide16)
               #(transition-slide slide17)
@@ -225,7 +234,7 @@
                           (em/do->
                             (em/move -300 (+ (.-height size) 300))
                             (em/set-style :display "")
-                            (em/delay 2000 (em/move (+(.-width size) 200) -300 3000))))))
+                            (em/delay 1000 (em/move (+(.-width size) 200) -300 1000))))))
               #(transition-slide slide30)
               #(transition-slide slide31)
               #(do  

@@ -8,53 +8,53 @@ goog.require('goog.math');
 * this is an example of a custom transform for enfocus
 */
 prezo.animation.pos_rel_anchor = (function pos_rel_anchor(anchor,relx,rely){
-var coord__81908 = (new goog.math.Coordinate(relx,rely));
+var coord__93144 = (new goog.math.Coordinate(relx,rely));
 
 return enfocus.core.chainable_standard.call(null,(function (node){
-return goog.positioning.positionAtAnchor.call(null,anchor,0,node,0,coord__81908);
+return goog.positioning.positionAtAnchor.call(null,anchor,0,node,0,coord__93144);
 }));
 });
-prezo.animation.call_out = (function call_out(node,txt,p__81909){
-var map__81910__81914 = p__81909;
-var map__81910__81915 = (cljs.core.truth_(cljs.core.seq_QMARK_.call(null,map__81910__81914))?cljs.core.apply.call(null,cljs.core.hash_map,map__81910__81914):map__81910__81914);
-var fsize__81916 = cljs.core.get.call(null,map__81910__81915,"﷐'font-size","4.4em");
-var vec__81911__81917 = cljs.core.get.call(null,map__81910__81915,"﷐'loc");
-var x__81918 = cljs.core.nth.call(null,vec__81911__81917,0,null);
-var y__81919 = cljs.core.nth.call(null,vec__81911__81917,1,null);
-var vec__81912__81920 = cljs.core.get.call(null,map__81910__81915,"﷐'size");
-var w__81921 = cljs.core.nth.call(null,vec__81912__81920,0,null);
-var h__81922 = cljs.core.nth.call(null,vec__81912__81920,1,null);
-var vec__81913__81923 = cljs.core.get.call(null,map__81910__81915,"﷐'font-offset",cljs.core.Vector.fromArray([5,10]));
-var fx__81924 = cljs.core.nth.call(null,vec__81913__81923,0,null);
-var fy__81925 = cljs.core.nth.call(null,vec__81913__81923,1,null);
+prezo.animation.call_out = (function call_out(node,txt,p__93145){
+var map__93146__93150 = p__93145;
+var map__93146__93151 = (cljs.core.truth_(cljs.core.seq_QMARK_.call(null,map__93146__93150))?cljs.core.apply.call(null,cljs.core.hash_map,map__93146__93150):map__93146__93150);
+var fsize__93152 = cljs.core.get.call(null,map__93146__93151,"﷐'font-size","4.4em");
+var vec__93147__93153 = cljs.core.get.call(null,map__93146__93151,"﷐'loc");
+var x__93154 = cljs.core.nth.call(null,vec__93147__93153,0,null);
+var y__93155 = cljs.core.nth.call(null,vec__93147__93153,1,null);
+var vec__93148__93156 = cljs.core.get.call(null,map__93146__93151,"﷐'size");
+var w__93157 = cljs.core.nth.call(null,vec__93148__93156,0,null);
+var h__93158 = cljs.core.nth.call(null,vec__93148__93156,1,null);
+var vec__93149__93159 = cljs.core.get.call(null,map__93146__93151,"﷐'font-offset",cljs.core.Vector.fromArray([5,10]));
+var fx__93160 = cljs.core.nth.call(null,vec__93149__93159,0,null);
+var fy__93161 = cljs.core.nth.call(null,vec__93149__93159,1,null);
 
-var div1__81926 = cljs.core.name.call(null,cljs.core.gensym.call(null,"div"));
-var div2__81927 = cljs.core.name.call(null,cljs.core.gensym.call(null,"div"));
+var div1__93162 = cljs.core.name.call(null,cljs.core.gensym.call(null,"div"));
+var div2__93163 = cljs.core.name.call(null,cljs.core.gensym.call(null,"div"));
 
-var nods__3015__auto____81929 = enfocus.core.nodes__GT_coll.call(null,document);
+var nods__3015__auto____93165 = enfocus.core.nodes__GT_coll.call(null,document);
 
-cljs.core.doall.call(null,cljs.core.map.call(null,(function (pnod81928){
-enfocus.core.en_append.call(null,goog.dom.htmlToDocumentFragment.call(null,cljs.core.str.call(null,"<div class='call-block' id='",div1__81926,"' style='display: none; position: fixed;'></div>","<div class='call-text' id='",div2__81927,"' style='display: none; position: fixed;'>",txt,"</div>"))).call(null,enfocus.core.css_select.call(null,"",pnod81928,cljs.core.Vector.fromArray(["#content-pane"])));
+cljs.core.doall.call(null,cljs.core.map.call(null,(function (pnod93164){
+enfocus.core.en_append.call(null,goog.dom.htmlToDocumentFragment.call(null,cljs.core.str.call(null,"<div class='call-block' id='",div1__93162,"' style='display: none; position: fixed;'></div>","<div class='call-text' id='",div2__93163,"' style='display: none; position: fixed;'>",txt,"</div>"))).call(null,enfocus.core.css_select.call(null,"",pnod93164,cljs.core.Vector.fromArray(["#content-pane"])));
 (function (pnod__3190__auto__){
-return prezo.animation.pos_rel_anchor.call(null,node,x__81918,y__81919).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
+return prezo.animation.pos_rel_anchor.call(null,node,x__93154,y__93155).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
 return enfocus.core.en_set_style.call(null,"﷐'border","3px solid #ff0000").call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
 return enfocus.core.en_set_style.call(null,"﷐'display","inline").call(null,pnod__3190__auto__,(function (pnod__3189__auto__){
-return enfocus.core.en_resize.call(null,w__81921,h__81922,500,null,null).call(null,pnod__3189__auto__);
+return enfocus.core.en_resize.call(null,w__93157,h__93158,500,null,null).call(null,pnod__3189__auto__);
 }));
 }));
 }));
-}).call(null,enfocus.core.css_select.call(null,"",pnod81928,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",div1__81926)])));
+}).call(null,enfocus.core.css_select.call(null,"",pnod93164,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",div1__93162)])));
 (function (pnod__3190__auto__){
 return enfocus.core.en_fade_out.call(null,1,null,null).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
-return prezo.animation.pos_rel_anchor.call(null,node,(x__81918 + fx__81924),((y__81919 + h__81922) + fy__81925)).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
-return enfocus.core.en_set_style.call(null,"﷐'font-size",fsize__81916).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
+return prezo.animation.pos_rel_anchor.call(null,node,(x__93154 + fx__93160),((y__93155 + h__93158) + fy__93161)).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
+return enfocus.core.en_set_style.call(null,"﷐'font-size",fsize__93152).call(null,pnod__3190__auto__,(function (pnod__3190__auto__){
 return enfocus.core.chainable_standard.call(null,(function (pnod__3168__auto__){
 return enfocus.core.setTimeout.call(null,(function (){
-return (function (){var nods__3015__auto____81931 = enfocus.core.nodes__GT_coll.call(null,enfocus.core.en_set_style.call(null,"﷐'display","inline"));
+return (function (){var nods__3015__auto____93167 = enfocus.core.nodes__GT_coll.call(null,enfocus.core.en_set_style.call(null,"﷐'display","inline"));
 
-cljs.core.doall.call(null,cljs.core.map.call(null,(function (pnod81930){
-return pnod81930;
-}),nods__3015__auto____81931));
+cljs.core.doall.call(null,cljs.core.map.call(null,(function (pnod93166){
+return pnod93166;
+}),nods__3015__auto____93167));
 return enfocus.core.en_set_style.call(null,"﷐'display","inline");
 })().call(null,pnod__3168__auto__);
 }),600);
@@ -64,64 +64,64 @@ return enfocus.core.en_fade_in.call(null,1000,null,null).call(null,pnod__3189__a
 }));
 }));
 }));
-}).call(null,enfocus.core.css_select.call(null,"",pnod81928,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",div2__81927)])));
-return pnod81928;
-}),nods__3015__auto____81929));
+}).call(null,enfocus.core.css_select.call(null,"",pnod93164,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",div2__93163)])));
+return pnod93164;
+}),nods__3015__auto____93165));
 return document;
 });
 prezo.animation.scary_parens = (function scary_parens(){
-var G__81932__81933 = cljs.core.seq.call(null,cljs.core.range.call(null,1,200));
+var G__93168__93169 = cljs.core.seq.call(null,cljs.core.range.call(null,1,200));
 
-if(cljs.core.truth_(G__81932__81933))
-{var i__81934 = cljs.core.first.call(null,G__81932__81933);
-var G__81932__81935 = G__81932__81933;
+if(cljs.core.truth_(G__93168__93169))
+{var i__93170 = cljs.core.first.call(null,G__93168__93169);
+var G__93168__93171 = G__93168__93169;
 
 while(true){
-var win_size__81936 = goog.dom.getViewportSize.call(null);
-var colors__81937 = cljs.core.Vector.fromArray(["aqua","black","blue","fuchsia","gray","grey","green","lime","maroon","navy","olive","purple","red","silver","teal","white","yellow"]);
-var paren_id__81938 = cljs.core.str.call(null,"paren",i__81934);
-var color__81939 = cljs.core.nth.call(null,colors__81937,cljs.core.rand_int.call(null,17));
-var fsize__81940 = cljs.core.str.call(null,cljs.core.rand.call(null,14),"em");
-var width__81941 = cljs.core.rand_int.call(null,win_size__81936.width);
-var height__81942 = cljs.core.rand_int.call(null,win_size__81936.height);
-var dly__81943 = cljs.core.rand_int.call(null,3000);
+var win_size__93172 = goog.dom.getViewportSize.call(null);
+var colors__93173 = cljs.core.Vector.fromArray(["aqua","black","blue","fuchsia","gray","grey","green","lime","maroon","navy","olive","purple","red","silver","teal","white","yellow"]);
+var paren_id__93174 = cljs.core.str.call(null,"paren",i__93170);
+var color__93175 = cljs.core.nth.call(null,colors__93173,cljs.core.rand_int.call(null,17));
+var fsize__93176 = cljs.core.str.call(null,cljs.core.rand.call(null,14),"em");
+var width__93177 = cljs.core.rand_int.call(null,win_size__93172.width);
+var height__93178 = cljs.core.rand_int.call(null,win_size__93172.height);
+var dly__93179 = cljs.core.rand_int.call(null,3000);
 
-var nods__3015__auto____81945 = enfocus.core.nodes__GT_coll.call(null,document);
+var nods__3015__auto____93181 = enfocus.core.nodes__GT_coll.call(null,document);
 
-cljs.core.doall.call(null,cljs.core.map.call(null,((function (i__81934,G__81932__81935){
-return (function (pnod81944){
-enfocus.core.en_append.call(null,goog.dom.htmlToDocumentFragment.call(null,cljs.core.str.call(null,"<div id='",paren_id__81938,"' style='display: none; position: fixed'>()<div>"))).call(null,enfocus.core.css_select.call(null,"",pnod81944,cljs.core.Vector.fromArray([".slide"])));
-enfocus.core.en_do__GT_.call(null,enfocus.core.en_move.call(null,width__81941,height__81942,0,null,null),enfocus.core.en_set_style.call(null,"﷐'font-size",fsize__81940),enfocus.core.en_set_style.call(null,"﷐'color",color__81939),enfocus.core.chainable_standard.call(null,((function (i__81934,G__81932__81935){
+cljs.core.doall.call(null,cljs.core.map.call(null,((function (i__93170,G__93168__93171){
+return (function (pnod93180){
+enfocus.core.en_append.call(null,goog.dom.htmlToDocumentFragment.call(null,cljs.core.str.call(null,"<div id='",paren_id__93174,"' style='display: none; position: fixed'>()<div>"))).call(null,enfocus.core.css_select.call(null,"",pnod93180,cljs.core.Vector.fromArray([".slide"])));
+enfocus.core.en_do__GT_.call(null,enfocus.core.en_move.call(null,width__93177,height__93178,0,null,null),enfocus.core.en_set_style.call(null,"﷐'font-size",fsize__93176),enfocus.core.en_set_style.call(null,"﷐'color",color__93175),enfocus.core.chainable_standard.call(null,((function (i__93170,G__93168__93171){
 return (function (pnod__3168__auto__){
-return enfocus.core.setTimeout.call(null,((function (i__81934,G__81932__81935){
+return enfocus.core.setTimeout.call(null,((function (i__93170,G__93168__93171){
 return (function (){
-return (function (){var nods__3015__auto____81947 = enfocus.core.nodes__GT_coll.call(null,enfocus.core.en_set_style.call(null,"﷐'display","inline"));
+return (function (){var nods__3015__auto____93183 = enfocus.core.nodes__GT_coll.call(null,enfocus.core.en_set_style.call(null,"﷐'display","inline"));
 
-cljs.core.doall.call(null,cljs.core.map.call(null,((function (i__81934,G__81932__81935){
-return (function (pnod81946){
-return pnod81946;
-});})(i__81934,G__81932__81935))
-,nods__3015__auto____81947));
+cljs.core.doall.call(null,cljs.core.map.call(null,((function (i__93170,G__93168__93171){
+return (function (pnod93182){
+return pnod93182;
+});})(i__93170,G__93168__93171))
+,nods__3015__auto____93183));
 return enfocus.core.en_set_style.call(null,"﷐'display","inline");
 })().call(null,pnod__3168__auto__);
-});})(i__81934,G__81932__81935))
-,dly__81943);
-});})(i__81934,G__81932__81935))
-)).call(null,enfocus.core.css_select.call(null,"",pnod81944,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",paren_id__81938)])));
-return pnod81944;
-});})(i__81934,G__81932__81935))
-,nods__3015__auto____81945));
+});})(i__93170,G__93168__93171))
+,dly__93179);
+});})(i__93170,G__93168__93171))
+)).call(null,enfocus.core.css_select.call(null,"",pnod93180,cljs.core.Vector.fromArray([cljs.core.str.call(null,"#",paren_id__93174)])));
+return pnod93180;
+});})(i__93170,G__93168__93171))
+,nods__3015__auto____93181));
 document;
-var temp__3698__auto____81948 = cljs.core.next.call(null,G__81932__81935);
+var temp__3698__auto____93184 = cljs.core.next.call(null,G__93168__93171);
 
-if(cljs.core.truth_(temp__3698__auto____81948))
-{var G__81932__81949 = temp__3698__auto____81948;
+if(cljs.core.truth_(temp__3698__auto____93184))
+{var G__93168__93185 = temp__3698__auto____93184;
 
 {
-var G__81950 = cljs.core.first.call(null,G__81932__81949);
-var G__81951 = G__81932__81949;
-i__81934 = G__81950;
-G__81932__81935 = G__81951;
+var G__93186 = cljs.core.first.call(null,G__93168__93185);
+var G__93187 = G__93168__93185;
+i__93170 = G__93186;
+G__93168__93171 = G__93187;
 continue;
 }
 } else

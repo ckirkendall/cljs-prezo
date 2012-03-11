@@ -3,20 +3,22 @@
 <div class="slide">
 <h2>Choosing your materials?</h2>
 <div id="clj-is" class="one-col">
-<h3>Materials</h3>
+<h3 style="padding-top: 10px;">Materials</h3>
 <ul id="materials-list">
 <li>Google Closure Libraries</li>
-<li>Google Based Third Party Libraries</li>
-<li>Name Spaced Compatible Libraries</li>
+<li>Google Closure Third Party Libraries</li>
+<li>Foreign Compatible Libraries</li>
 <li>Non Standardized Libraries</li>
 </ul>
-<br/><br/>
+<br/>
 <pre>
 
-{:foreign-libs [{:file "libs/my-foreign-lib.js"
+{
+:foreign-libs [{:file "libs/my-foreign-lib.js"
                  :provides "org.compay.mylib"}]
- :libs ["goog/dom/query.js"]
- :extern ["js/jquery/jquery.js"]}
+:libs ["goog/dom/query.js"]
+:extern ["js/jquery/jquery.js"]
+}
  
 </pre>
 </div>
